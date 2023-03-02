@@ -14,5 +14,7 @@ Controle door lock with Raspberry Pi and camera, so it only opens if the right p
 ## Facerecognition
 
 [FaceRecognition lib](https://github.com/ageitgey/face_recognition) for python
-[dlib](http://dlib.net/python/index.html) for FaceRecognition
+
+[dlib](http://dlib.net/python/index.html) for FaceRecognition to work
+
 [Code](https://github.com/bradtraversy/face_recognition_examples/blob/master/indentify.py) inspiration from bradtraversy
