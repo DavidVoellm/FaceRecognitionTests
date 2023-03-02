@@ -7,7 +7,7 @@ cap.set(4,480) # set Height
  
 while(True):
     ret, frame = cap.read()
-    frame = cv2.flip(frame, -1) # Flip camera vertically
+    #frame = cv2.flip(frame, -1) # Flip camera vertically
     
     cv2.imshow('frame', frame)
     
