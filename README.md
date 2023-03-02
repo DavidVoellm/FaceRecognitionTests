@@ -8,6 +8,7 @@ Controle door lock with Raspberry Pi and camera, so it only opens if the right p
  - Servo Motor
  - 2 Buttons
  - Buzzer
+ - Fan
 
 
 
@@ -17,4 +18,4 @@ Controle door lock with Raspberry Pi and camera, so it only opens if the right p
 
 [dlib](http://dlib.net/python/index.html) for FaceRecognition to work
 
-[Code](https://github.com/bradtraversy/face_recognition_examples/blob/master/indentify.py) inspiration from bradtraversy
+Code inspiration from [bradtraversy](https://github.com/bradtraversy/face_recognition_examples/blob/master/indentify.py)
