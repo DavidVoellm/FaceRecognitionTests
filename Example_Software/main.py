@@ -2,34 +2,19 @@ import face_recognition
 import numpy as np
 from PIL import Image, ImageDraw
 from IPython.display import display
+from PersonenHandler import PersonenHandler
 import os
 
 # This is an example of running face recognition on a single image
 # and drawing a box around each person that was identified.
 
-# Load a sample picture and learn how to recognize it.
-david_image = face_recognition.load_image_file("./David/fe2d606f-13c2-4d58-b954-21821905afd2.jpg")
-david_face_encoding = face_recognition.face_encodings(david_image)[0]
-
-# Load a sample picture and learn how to recognize it.
-#simon_image = face_recognition.load_image_file("./Simon/WhatsApp Image 2023-02-08 at 22.12.11.jpeg")
-#simon_face_encoding = face_recognition.face_encodings(simon_image)[0]
-
-# Load a second sample picture and learn how to recognize it.
-philipp_image = face_recognition.load_image_file("./Philipp/d279c0bf-d4a7-4b41-8169-a149cf4ce5ac.jpg")
-philipp_face_encoding = face_recognition.face_encodings(philipp_image)[0]
+ph = PersonenHandler()
+ph.find("./Daten")
 
 # Create arrays of known face encodings and their names
-known_face_encodings = [
-    david_face_encoding,
-    #simon_face_encoding,
-    philipp_face_encoding
-]
-known_face_names = [
-    "David",
-    #"Simon",
-    "Philipp"
-]
+known_face_encodings = ph.get_face_encodings()
+known_face_names = ph.get_face_names()
+
 print('Learned encoding for', len(known_face_encodings), 'images.')
 
 files = os.listdir("./Beide")
