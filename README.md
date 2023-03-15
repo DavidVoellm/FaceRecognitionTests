@@ -28,3 +28,5 @@ Code inspiration from [bradtraversy](https://github.com/bradtraversy/face_recogn
  - einbau dieser Klasse in main.py
  - Buzzer Gehäuse
  - LED Gehäuse
+
+test
