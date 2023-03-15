@@ -1,2 +1,0 @@
-fswebcam -r 1280x720 --no-banner /images/image1.jpg
-ffmpeg -f v4l2 -video_size 1280x720 -i /dev/video0 -frames 1 out.jpg

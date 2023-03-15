@@ -1,13 +1,19 @@
+import numpy as np
 import cv2
 
-cam = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
+cap.set(3,640) # set Width
+cap.set(4,480) # set Height
+ 
+while(True):
+    ret, frame = cap.read()
+    #frame = cv2.flip(frame, -1) # Flip camera vertically
+    
+    cv2.imshow('frame', frame)
+    
+    k = cv2.waitKey(30) & 0xff
+    if k == 27: # press 'ESC' to quit
+        break
 
-while True:
-	ret, image = cam.read()
-	cv2.imshow('Imagetest',image)
-	k = cv2.waitKey(1)
-	if k != -1:
-		break
-cv2.imwrite('/home/pi/testimage.jpg', image)
-cam.release()
+cap.release()
 cv2.destroyAllWindows()
