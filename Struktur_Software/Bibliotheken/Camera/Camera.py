@@ -9,6 +9,3 @@ class Camera:
     def get_frame(self): 
         _, frame = self.cam.read()
         return frame
-    def get_frame_as_array(self): 
-        _, frame = self.cam.read()
-        return numpy.asarray(frame)
