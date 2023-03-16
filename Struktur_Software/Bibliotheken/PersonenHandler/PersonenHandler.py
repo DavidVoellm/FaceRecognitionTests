@@ -7,7 +7,6 @@ class PersonenHandler:
         pass
     def find(self, dir): 
         for file in os.listdir(dir):
-            print(dir) # Debug
             if file.endswith(".jpg"):
                 name = file[:-4]
                 self.personen.append(Person(name, dir+"/"+file))
