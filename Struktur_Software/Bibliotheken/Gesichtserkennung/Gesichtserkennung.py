@@ -11,7 +11,7 @@ class Gesichtserkennung:
         return face_encoding
     def set_personen(self, personen):
         for person in personen:
-            encoding = self.__create_face_encoding(person.image)
+            encoding = Gesichtserkennung.__create_face_encoding(person.image)
             self.face_encodings.append(encoding)
             self.face_names.append(person.name)
         pass
