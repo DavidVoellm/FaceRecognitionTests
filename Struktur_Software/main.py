@@ -1,5 +1,6 @@
 from Bibliotheken import *
 import os
+import cv2
 
 personen_handler = PersonenHandler()
 camera = Camera()
@@ -8,7 +9,9 @@ personen_handler.find("./Daten")
 
 erkennung.set_personen(personen_handler.get_personen())
 
-unknown_image = camera.get_frame()
+frame = camera.get_frame()
+cv2.imwrite("./frame.jpg", frame)
+unknown_image = frame
 
 names = erkennung.get_face_names(unknown_image)
 print(names)
