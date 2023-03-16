@@ -17,7 +17,9 @@ class Gesichtserkennung:
         pass
     def get_face_names(self, unknown_image):
         names = []
-        for face_encoding in self.face_encodings:
+        face_locations = face_recognition.face_locations(unknown_image)
+        face_encodings = face_recognition.face_encodings(unknown_image, face_locations)
+        for face_encoding in face_encodings:
             matches = face_recognition.compare_faces(self.face_encodings, face_encoding)
             name = "Unknown"
             face_distances = face_recognition.face_distance(self.face_encodings, face_encoding)
