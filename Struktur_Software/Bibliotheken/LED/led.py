@@ -15,7 +15,7 @@ class LED:
         GPIO.setup(gruen,  GPIO.OUT)
         GPIO.setup(blau,  GPIO.OUT)
 
-    def setLEDS(self,outputs):
+    def set(self,outputs):
         self.outputs = []
         GPIO.output(self.rot, outputs[0])
         GPIO.output(self.gruen, outputs[1])
