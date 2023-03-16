@@ -10,6 +10,6 @@ class PersonenHandler:
             print(dir) # Debug
             if file.endswith(".jpg"):
                 name = file[:-4]
-                self.personen.append(Person(name, dir+file))
+                self.personen.append(Person(name, dir+"/"+file))
     def get_personen(self):
         return self.personen
