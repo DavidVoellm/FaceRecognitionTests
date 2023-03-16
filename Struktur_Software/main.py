@@ -1,17 +1,11 @@
+from handler import Handler
 from Bibliotheken import *
-import os
-import cv2
 
-personen_handler = PersonenHandler()
-camera = Camera()
-erkennung = Gesichtserkennung()
-personen_handler.find("./Daten")
+handler = Handler(LED(rot=22, gruen=23,blau=24), Servo(pin=17), Camera(0), PersonenHandler(),Gesichtserkennung())
+handler.begin()
+handler.PersonenInBild()
 
-erkennung.set_personen(personen_handler.get_personen())
-
-frame = camera.get_frame()
-cv2.imwrite("./frame.jpg", frame)
-unknown_image = frame
-
-names = erkennung.get_face_names(unknown_image)
-print(names)
+while True:
+    pass
+    if None():
+        pass

@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-class LED_HANDLER:
+class LED:
     def __init__(self,rot=22,gruen=27,blau=17):
         self.setup(rot,gruen,blau)
         self.outputs = []

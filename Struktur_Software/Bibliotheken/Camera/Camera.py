@@ -1,9 +1,8 @@
 import cv2
-import numpy
 
 class Camera:
-    def __init__(self):
-        self.cam = cv2.VideoCapture(0)
+    def __init__(self, cam:int=0):
+        self.cam = cv2.VideoCapture(cam)
     def __del__(self):
         self.cam.release()
     def get_frame(self): 
