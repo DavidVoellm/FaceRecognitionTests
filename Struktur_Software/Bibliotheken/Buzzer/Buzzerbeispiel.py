@@ -5,6 +5,7 @@ from Buzzer import Buzzer
 
 GPIO.setmode(GPIO.BCM)
 buzzer = Buzzer(14)
+time.sleep(0.5)
 buzzer.on()
 
 time.sleep(1)
