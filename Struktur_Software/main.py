@@ -8,7 +8,7 @@ personen_handler.find("./Daten")
 
 erkennung.set_personen(personen_handler.get_personen())
 
-unknown_image = camera.get_frame_as_array()
+unknown_image = camera.get_frame()
 
 names = erkennung.get_face_names(unknown_image)
 print(names)

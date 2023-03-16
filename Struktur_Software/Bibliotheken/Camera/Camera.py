@@ -6,6 +6,9 @@ class Camera:
         self.cam = cv2.VideoCapture(0)
     def __del__(self):
         self.cam.release()
+    def get_frame(self): 
+        _, frame = self.cam.read()
+        return frame
     def get_frame_as_array(self): 
         _, frame = self.cam.read()
         return numpy.asarray(frame)
