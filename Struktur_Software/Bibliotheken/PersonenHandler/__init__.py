@@ -1,1 +1,1 @@
-from .PersonenHandler import PersonenHandler
+from .PersonenHandler import PersonenHandler, Person
