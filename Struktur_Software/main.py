@@ -11,3 +11,4 @@ erkennung.set_personen(personen_handler.get_personen())
 unknown_image = camera.get_frame_as_array()
 
 names = erkennung.get_face_names(unknown_image)
+print(names)
