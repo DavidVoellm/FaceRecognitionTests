@@ -1,6 +1,7 @@
 from Bibliotheken import *
 class Handler:
-    def __init__(self, LED:LED, Servo, Camera, PersonenHandler, Erkennung, oeffneFunc=None, schliessFunc=None):
+    def __init__(self, Buzzer:Buzzer, LED:LED, Servo, Camera, PersonenHandler, Erkennung, oeffneFunc=None, schliessFunc=None):
+        self.Buzzer:Buzzer = Buzzer
         self.LED:LED = LED
         self.Servo = Servo
         self.Camera = Camera
