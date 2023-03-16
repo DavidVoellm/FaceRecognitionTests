@@ -1,6 +1,5 @@
-import imp
 import os
-from .PersonenHandler import Person
+from .Person import Person
 
 class PersonenHandler:
     def __init__(self):
