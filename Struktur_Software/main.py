@@ -1,4 +1,4 @@
-from .Bibliotheken import *
+from Bibliotheken import *
 import os
 
 personen_handler = PersonenHandler()
