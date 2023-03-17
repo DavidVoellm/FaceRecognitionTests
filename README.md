@@ -27,4 +27,3 @@ Code inspiration from [bradtraversy](https://github.com/bradtraversy/face_recogn
  - Hauptklasse zum Programmhandling: warten auf Knopf, auf, zu, ...
  - einbau dieser Klasse in main.py
  - Buzzer Gehäuse
- - LED Gehäuse
