@@ -4,3 +4,4 @@ from .PersonenHandler import *
 from .Servo import *
 from .Gesichtserkennung import *
 from .Buzzer import *
+from .Knopf import *
