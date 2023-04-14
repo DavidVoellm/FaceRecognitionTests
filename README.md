@@ -23,8 +23,10 @@ Code inspiration from [bradtraversy](https://github.com/bradtraversy/face_recogn
 ## TODO
  - Platine (Buzzer, LED, Servo, Knopf)
  - Zusammenbau
+ - Kabel verlöten (Platine lohnt sich nicht wirklich, da nur Widerstände direkt drauf gelötet werden könnten und die Platine auch nicht aufsteckbar sein würde)
 
 In den Ferien gemacht:
  - Hauptschleife logisch fertig gestellt
  - gesamten Code dokumentiert
  - Zusammen Bau und Test
+ - Schaltplan
