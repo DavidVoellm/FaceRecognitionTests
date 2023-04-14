@@ -16,7 +16,7 @@ class LED:
 
 
     def set(self,outputs): # Liste Ouput hat die Länge 3 mit den Werten für Rot, Grün und Blau (Integer Werte: an oder aus, ansonsten müsste PWM funktion genutzt werden)
-        if outputs == self.outpus: return # Damit Funktion nur läuft, wenn Werte sich auch geändert haben
+        if outputs == self.outputs: return # Damit Funktion nur läuft, wenn Werte sich auch geändert haben
         self.outputs = outputs # Neue Werte speichern
         GPIO.output(self.rot, outputs[0])  # Ouputwerte verändern
         GPIO.output(self.gruen, outputs[1])
