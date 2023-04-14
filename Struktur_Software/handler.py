@@ -30,8 +30,8 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 if self.PersonenHandler.sind_personen_berechtigt(personen): # Wenn bekannte Personen dabei sind soll die Tür aufgeschlossen werden
                     print("Tür öffnen") # Debugging Information
                     self.aufschliessen()
-                    while self.Tuer.istGedrueckt():     # warten bis jemand die Tür öffnet
-                        pass
+                    while self.Tuer.istGedrueckt(): pass# warten bis jemand die Tür öffnet
+                    time.sleep(1)                       # noch eine extra Sekunde warten, damit nicht durch einen Wackelkontakt an der Kontaktschleife die Türe sofort wieder verschlossen wird
                     self.tuer_zu = False
 
                 else:                                   # Wenn Personen unbekannt sind soll die Türe verschlossen bleiben und ein Alarm läuten
