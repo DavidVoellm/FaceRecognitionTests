@@ -23,3 +23,8 @@ Code inspiration from [bradtraversy](https://github.com/bradtraversy/face_recogn
 ## TODO
  - Platine (Buzzer, LED, Servo, Knopf)
  - Zusammenbau
+
+In den Ferien gemacht:
+ - Hauptschleife logisch fertig gestellt
+ - gesamten Code dokumentiert
+ - Zusammen Bau und Test
