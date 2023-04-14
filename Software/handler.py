@@ -31,6 +31,8 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                     print("Tür öffnen") # Debugging Information
                     self.aufschliessen()
                     while self.Tuer.istGedrueckt(): pass# warten bis jemand die Tür öffnet
+                    #'''Mögliche Zusatzfunktion: neues Bild aufnehmen'''
+                    
                     time.sleep(1)                       # noch eine extra Sekunde warten, damit nicht durch einen Wackelkontakt an der Kontaktschleife die Türe sofort wieder verschlossen wird
                     self.tuer_zu = False
 
@@ -45,7 +47,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 print("Tür schliessen") # Debugging Information
                 self.zuschliessen()
 
-            #'''Mögliche Zusatzfunktion: neues Bild aufnehmen'''
+            
 
     def aufschliessen(self):
         self.LED.set([1,1,0])       # Orangenes Wartelicht
