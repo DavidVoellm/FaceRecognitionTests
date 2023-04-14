@@ -27,11 +27,15 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
 
                 personen = self.personen_in_bild()      # Findet alle Personen im Bild der Kamera und ordnet ihnen Namen zu
                 print(personen) # Debugging Information
-                if self.PersonenHandler.sind_personen_berechtigt(personen): # Wenn bekannte Personen dabei sind soll die Tür geöffnet werden
-                    self.oeffne_tuer()
+                if self.PersonenHandler.sind_personen_berechtigt(personen): # Wenn bekannte Personen dabei sind soll die Tür aufgeschlossen werden
                     print("Tür öffnen") # Debugging Information
+                    self.aufschliessen()
+                    while self.Tuer.istGedrueckt():     # warten bis jemand die Tür öffnet
+                        pass
                     self.tuer_zu = False
+
                 else:                                   # Wenn Personen unbekannt sind soll die Türe verschlossen bleiben und ein Alarm läuten
+                    self.LED.set([1,0,0])               # Rotes Licht - > Tür zu
                     self.Buzzer.on()
                     time.sleep(0.5)                     # Alarm für 0.5 Sekunden
                     self.Buzzer.off()
@@ -39,15 +43,15 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
             if(self.Tuer.istGedrueckt()):               # Wenn die Türe geschlossen wird, soll der Servo wieder das Schloss vorschieben
                 self.tuer_zu = True
                 print("Tür schliessen") # Debugging Information
-                self.schliesse_tuer()
+                self.zuschliessen()
 
             #'''Mögliche Zusatzfunktion: neues Bild aufnehmen'''
 
-    def oeffne_tuer(self):
+    def aufschliessen(self):
         self.LED.set([1,1,0])       # Orangenes Wartelicht
         self.Servo.setAngle(180)    # Schloss weg von der Tür drehen - > öffnen
         self.LED.set([0,1,0])       # Grünes Licht - > Tür offen
-    def schliesse_tuer(self):
+    def zuschliessen(self):
         self.LED.set([1,1,0])       # Orangenes Wartelicht
         self.Servo.setAngle(0)      # Schloss hin zu der Tür drehen - > zu
         self.LED.set([1,0,0])       # Rotes Licht - > Tür zu
