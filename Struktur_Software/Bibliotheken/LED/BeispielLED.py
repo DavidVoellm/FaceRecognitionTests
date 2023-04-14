@@ -1,6 +1,10 @@
 import led
+import RPi.GPIO as GPIO
 
-LED = led.LED()
-LED.setLED([0,1,0])
-LED.test()
-LED.cleanup()
+GPIO.setmode(GPIO.BCM)
+
+LED = led.LED() # LED Objekt erstellem
+LED.test() # test Funktion durchlaufen lassen
+
+#beenden
+GPIO.cleanup()
