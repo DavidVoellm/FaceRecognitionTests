@@ -27,14 +27,15 @@ class Gesichtserkennung:
         encoding = None
         face_locations = face_recognition.face_locations(unknown_image) # Alle Gesichter in unbekanntem Bild finden
         face_encodings = face_recognition.face_encodings(unknown_image, face_locations) # Gesichter in vergleichbare Kodierung umwandeln
-        unbekannte_gesichter = len(face_encodings) # anzahl wird am Anfang auf gesamt Gesichter gesetzt
+        unbekannte_gesichter = 0
         for face_encoding in face_encodings: # Alle gefundenen Gesichter einzeln untersuchen
             matches = face_recognition.compare_faces(self.face_encodings, face_encoding, 0.6) # passt gefundenes Gesicht zu bekannten Gesichtern, mit Toleranz 0.6 (je kleiner desto genauer)
             face_distances = face_recognition.face_distance(self.face_encodings, face_encoding) # Gibt für jedes bekannte Gesicht an, wie gut es zu dem gefundenen passt
             best_match_index = np.argmin(face_distances) # gibt den Index an, für das bekannte Gesicht, welches am besten passt
-            if matches[best_match_index]: # Wenn das am ähnlichste Gesicht passt
+            if not matches[best_match_index]: # Wenn das am ähnlichste Gesicht passt
                 encoding = face_encoding
-                unbekannte_gesichter-=1 #bekannte Gesichter werden abgezogen
+                unbekannte_gesichter+=1 #unbekannte Gesichter werden gezählt
+
         if unbekannte_gesichter == 1: return True,encoding # wenn es genau ein unbekanntes Gesicht gibt, wird True und die Kodierung zurückgegeben
         return False,None # ansonsten wird False und keine Kodierung zurückgegeben
 

@@ -37,8 +37,8 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                         #'''Mögliche Zusatzfunktion: neue Person aufnehmen'''
                         while self.Tuer.istGedrueckt():
                             erg = self.neue_person_hinzufuegen()
+                            self.LED.set([0,1,0])  
                             if erg is True:
-                                self.LED.set([0,0,1])   
                                 break
                     
                     time.sleep(1)                       # noch eine extra Sekunde warten, damit nicht durch einen Wackelkontakt an der Kontaktschleife die Türe sofort wieder verschlossen wird
