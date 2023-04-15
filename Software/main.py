@@ -2,6 +2,7 @@ from handler import Handler
 from Bibliotheken import * # Importiert alle Bibliotheken aus dem Ordner Bibliotheken
 
 GPIO.setmode(GPIO.BCM) # Damit wird nur festgelegt wie die Ports nummeriert werden (in diesem Fall wie in pinBelegung.png in den orangenen Kästen)
+GPIO.setwarnings(False) # unnötige Meldungen entfernen
 
 # Handler Objekt wird erstellt und Pins der einzelnen Bauteile können definiert werden
 handler = Handler(Buzzer(pin=17), LED(rot=2, gruen=3,blau=4), Servo(pin=27), Camera(0), PersonenHandler(),Gesichtserkennung(), Knopf(pin=26), Knopf(pin=19)) 
