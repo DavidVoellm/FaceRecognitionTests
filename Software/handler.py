@@ -103,6 +103,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 if one_person: # Wenn genau eine neue Person dabei ist
                     name = self.Erkennung.add_person(encoding) # Person zu bekannten Personen hinzufügen
                     self.PersonenHandler.add(name) # Person zu erlaubten Personen hinzufügen
+                    print("Person hinzugefügt")
                     return True
                 if not self.warten_mit_abbruch(0.3): return False
             return False
