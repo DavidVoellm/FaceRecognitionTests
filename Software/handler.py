@@ -33,13 +33,14 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 if self.PersonenHandler.sind_personen_berechtigt(personen): # Wenn bekannte Personen dabei sind soll die Tür aufgeschlossen werden
                     print("Tür öffnen") # Debugging Information
                     self.aufschliessen()
+                    neue_person = True # es darf eine neue Person hinzugefügt werden: um Funktion zu deaktivieren auf 'False' setzen
                     while self.Tuer.istGedrueckt(): # warten bis jemand die Tür öffnet
                         #'''Mögliche Zusatzfunktion: neue Person aufnehmen'''
-                        while self.Tuer.istGedrueckt():
+                        while neue_person:
                             erg = self.neue_person_hinzufuegen()
                             self.LED.set([0,1,0])  
-                            if erg is True:
-                                break
+                            if erg is True: # Damit maximal eine neue Person hinzugefügt werden kann
+                                neue_person = False
                     
                     time.sleep(1)                       # noch eine extra Sekunde warten, damit nicht durch einen Wackelkontakt an der Kontaktschleife die Türe sofort wieder verschlossen wird
                     self.tuer_zu = False
