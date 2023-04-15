@@ -10,6 +10,8 @@ class PersonenHandler:
                 name = file[:-4] # Name ist der Dateiname ohne die ".jpg"-Endung
                 self.personen.append(Person(name, dir+"/"+file)) # Person wird Liste hinzugefügt
         return self.personen
+    def add(self, name):
+        self.personen.append(Person(name, ""))
     def sind_personen_berechtigt(self, names): # gibt True zurück wenn mindestens einer der Namen in der gespeicherten Namensliste vorkommt
         for person in self.personen:
             for name in names:
