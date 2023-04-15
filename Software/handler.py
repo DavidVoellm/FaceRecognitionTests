@@ -36,7 +36,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                     neue_person = True # es darf eine neue Person hinzugefügt werden: um Funktion zu deaktivieren auf 'False' setzen
                     while self.Tuer.istGedrueckt(): # warten bis jemand die Tür öffnet
                         #'''Mögliche Zusatzfunktion: neue Person aufnehmen'''
-                        while neue_person:
+                        while neue_person and self.Tuer.istGedrueckt():
                             erg = self.neue_person_hinzufuegen()
                             self.LED.set([0,1,0])  
                             if erg is True: # Damit maximal eine neue Person hinzugefügt werden kann
@@ -91,21 +91,20 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 if (current_time-start_time).total_seconds()>=2: # Abfrage ob Knopf für mindestens 2 Sekunden gedrückt wurde
                     self.LED.set([0,0,1])                   # blaues Licht -> neues Gesicht kann hinzugefügt werden
             if (current_time-start_time).total_seconds()<2: return None # wenn Knopf für weniger als 2 Sekunden gedrückt wurde soll abgebrochen werden
-            self.LED.set([0,0,1])                               # blaues Blinklicht -> in 1,6 sekunden wird Bild aufgenommen, kann mit Knopfdruck abgebrochen werden
-            if not self.warten_mit_abbruch(0.5): return False
-            self.LED.set([0,0,0]) 
-            if not self.warten_mit_abbruch(0.3): return False
-            self.LED.set([0,0,1]) 
-            if not self.warten_mit_abbruch(0.5): return False
-            self.LED.set([0,0,0]) 
-            if not self.warten_mit_abbruch(0.3): return False
+
+            for i in range(3):              # blaues Blinklicht 3 mal -> in 1,5 sekunden wird Bild aufgenommen, kann mit Knopfdruck abgebrochen werden
+                self.LED.set([0,0,1])
+                if not self.warten_mit_abbruch(0.3): return False
+                self.LED.set([0,0,0]) 
+                if not self.warten_mit_abbruch(0.2): return False
+
             self.LED.set([1,1,1]) 
             while not self.Knopf.istGedrueckt():
                 one_person, encoding = self.Erkennung.is_one_new_face(self.Camera.get_frame()) # Im Bild der Kamera nach neuer Person suchen
                 if one_person: # Wenn genau eine neue Person dabei ist
                     name = self.Erkennung.add_person(encoding) # Person zu bekannten Personen hinzufügen
                     self.PersonenHandler.add(name) # Person zu erlaubten Personen hinzufügen
-                    print("Person hinzugefügt")
+                    print(name+" hinzugefügt")
                     return True
                 if not self.warten_mit_abbruch(0.3): return False
             return False
