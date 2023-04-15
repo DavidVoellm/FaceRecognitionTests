@@ -30,3 +30,4 @@ In den Ferien gemacht:
  - gesamten Code dokumentiert
  - Zusammen Bau und Test
  - Schaltplan
+ - Person hinzufügen wenn Tür aufgeschlossen ist
