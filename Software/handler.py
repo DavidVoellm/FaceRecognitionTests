@@ -70,20 +70,20 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
         return self.Erkennung.get_face_names(bild)      # Ordnet Gesichtern im Bild Namen zu
     
     def warten_mit_abbruch(self, time): # wartet 'time' Sekunden und gibt False zurück wenn Knopf zwischen drin gedrückt wurde
-        current_time = datetime.now().strftime("%H:%M:%S") # speichert aktuelle Zeit
+        current_time = datetime.strptime( datetime.now(), "%H:%M:%S") # speichert aktuelle Zeit
         new_time = current_time
         while not self.Knopf.istGedrueckt():
-            new_time = datetime.now().strftime("%H:%M:%S")
+            new_time = datetime.strptime( datetime.now(), "%H:%M:%S")
             if (new_time-current_time).total_seconds()>=time: # Abfrage ob Knopf für mindestens 'time' Sekunden nicht gedrückt wurde
                 return True
         return False
 
     def neue_person_hinzufuegen(self):
         if self.Knopf.istGedrueckt():               # Neues Gesicht bei Knopfdruck hinzufügen
-            current_time = datetime.now().strftime("%H:%M:%S") # speichert aktuelle Zeit
+            current_time = datetime.strptime( datetime.now(), "%H:%M:%S") # speichert aktuelle Zeit
             new_time = current_time
             while self.Knopf.istGedrueckt():
-                new_time = datetime.now().strftime("%H:%M:%S")
+                new_time = datetime.strptime( datetime.now(), "%H:%M:%S")
                 if (new_time-current_time).total_seconds()>=2: # Abfrage ob Knopf für mindestens 2 Sekunden gedrückt wurde
                     self.LED.set([0,0,1])                   # blaues Licht -> neues Gesicht kann hinzugefügt werden
             if (new_time-current_time).total_seconds()<2: return None # wenn Knopf für weniger als 2 Sekunden gedrückt wurde soll abgebrochen werden
