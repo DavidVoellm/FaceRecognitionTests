@@ -35,10 +35,11 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                     self.aufschliessen()
                     while self.Tuer.istGedrueckt(): # warten bis jemand die Tür öffnet
                         #'''Mögliche Zusatzfunktion: neue Person aufnehmen'''
-                        erg = self.neue_person_hinzufuegen()
-                        if erg is False or erg is True:
-                            self.LED.set([0,0,1])   
-                            break
+                        while self.Tuer.istGedrueckt():
+                            erg = self.neue_person_hinzufuegen()
+                            if erg is True:
+                                self.LED.set([0,0,1])   
+                                break
                     
                     time.sleep(1)                       # noch eine extra Sekunde warten, damit nicht durch einen Wackelkontakt an der Kontaktschleife die Türe sofort wieder verschlossen wird
                     self.tuer_zu = False
