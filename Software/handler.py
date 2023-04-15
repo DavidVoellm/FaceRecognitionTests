@@ -72,23 +72,23 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
     def get_time(self):
         datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S")
     def warten_mit_abbruch(self, time): # wartet 'time' Sekunden und gibt False zurück wenn Knopf zwischen drin gedrückt wurde
-        current_time = datetime.now().strftime("%H:%M:%S") # speichert aktuelle Zeit
-        new_time = current_time
+        start_time = self.get_time() # speichert aktuelle Zeit
+        current_time = start_time
         while not self.Knopf.istGedrueckt():
-            new_time = datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S")
-            if (new_time-current_time).total_seconds()>=time: # Abfrage ob Knopf für mindestens 'time' Sekunden nicht gedrückt wurde
+            current_time = self.get_time()
+            if (current_time-start_time).total_seconds()>=time: # Abfrage ob Knopf für mindestens 'time' Sekunden nicht gedrückt wurde
                 return True
         return False
 
     def neue_person_hinzufuegen(self):
         if self.Knopf.istGedrueckt():               # Neues Gesicht bei Knopfdruck hinzufügen
-            current_time = datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S") # speichert aktuelle Zeit
-            new_time = current_time
+            start_time = self.get_time() # speichert aktuelle Zeit
+            current_time = start_time
             while self.Knopf.istGedrueckt():
-                new_time = datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S")
-                if (new_time-current_time).total_seconds()>=2: # Abfrage ob Knopf für mindestens 2 Sekunden gedrückt wurde
+                current_time = self.get_time()
+                if (current_time-start_time).total_seconds()>=2: # Abfrage ob Knopf für mindestens 2 Sekunden gedrückt wurde
                     self.LED.set([0,0,1])                   # blaues Licht -> neues Gesicht kann hinzugefügt werden
-            if (new_time-current_time).total_seconds()<2: return None # wenn Knopf für weniger als 2 Sekunden gedrückt wurde soll abgebrochen werden
+            if (current_time-start_time).total_seconds()<2: return None # wenn Knopf für weniger als 2 Sekunden gedrückt wurde soll abgebrochen werden
             self.LED.set([0,0,1])                               # blaues Blinklicht -> in 1,6 sekunden wird Bild aufgenommen, kann mit Knopfdruck abgebrochen werden
             if not self.warten_mit_abbruch(0.5): return False
             self.LED.set([0,0,0]) 
