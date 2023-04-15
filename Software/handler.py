@@ -70,7 +70,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
         return self.Erkennung.get_face_names(bild)      # Ordnet Gesichtern im Bild Namen zu
     
     def get_time(self):
-        datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S")
+        return datetime.strptime( datetime.now().strftime("%H:%M:%S"), "%H:%M:%S")
     def warten_mit_abbruch(self, time): # wartet 'time' Sekunden und gibt False zurück wenn Knopf zwischen drin gedrückt wurde
         start_time = self.get_time() # speichert aktuelle Zeit
         current_time = start_time
