@@ -34,6 +34,7 @@ class Gesichtserkennung:
             best_match_index = np.argmin(face_distances) # gibt den Index an, für das bekannte Gesicht, welches am besten passt
             if matches[best_match_index]: # Wenn das am ähnlichste Gesicht passt
                 encoding = face_encoding
+                print(type(unbekannte_gesichter))
                 unbekannte_gesichter-=1 #bekannte Gesichter werden abgezogen
         if unbekannte_gesichter == 1: return True,encoding # wenn es genau ein unbekanntes Gesicht gibt, wird True und die Kodierung zurückgegeben
         return False,None # ansonsten wird False und keine Kodierung zurückgegeben
