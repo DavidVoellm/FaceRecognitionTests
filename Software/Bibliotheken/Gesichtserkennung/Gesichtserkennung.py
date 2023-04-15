@@ -19,7 +19,7 @@ class Gesichtserkennung:
             self.add(person.name, encoding) # Name und Kodierung zu Listen hinzufügen
 
     def add_person(self, face_encoding, name=None):
-        name = "person"+str(len(self.face_names+1)) if name == None else name # neue Person soll den Namen: "Person2", wenn sie als 2. Person hinzugefügt wurde und keinen spezifischen Namen hat
+        name = ("person"+ str(1+len(self.face_names))) if name == None else name # neue Person soll den Namen: "Person2", wenn sie als 2. Person hinzugefügt wurde und keinen spezifischen Namen hat
         self.add(name, face_encoding) # Name und Kodierung zu Listen hinzufügen
         return name
 
