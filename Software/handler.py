@@ -99,7 +99,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
             if not self.warten_mit_abbruch(0.3): return False
             self.LED.set([1,1,1]) 
             while not self.Knopf.istGedrueckt():
-                one_person, encoding = self.Erkennung.is_one_new_face(self, self.Camera.get_frame()) # Im Bild der Kamera nach neuer Person suchen
+                one_person, encoding = self.Erkennung.is_one_new_face(self.Camera.get_frame()) # Im Bild der Kamera nach neuer Person suchen
                 if one_person: # Wenn genau eine neue Person dabei ist
                     name = self.Erkennung.add_person(encoding) # Person zu bekannten Personen hinzufügen
                     self.PersonenHandler.add(name) # Person zu erlaubten Personen hinzufügen
