@@ -16,4 +16,4 @@ try: # Falls ein Fehler auftritt oder das Programm bewusst unterbrochen wird st√
 except Exception as e:
     print('Error', str(e)) # Fehlerausgabe
 
-GPIO.cleanup() # Falls das Programm beendet wurde oder ein Fehler auf kommt werden die Ports freigegeben und k√∂nnen direkt wieder genutzt werden
+handler.end()

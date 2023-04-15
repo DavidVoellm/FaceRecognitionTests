@@ -15,6 +15,7 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
 
         self.tuer_zu = False
     def begin(self) -> None:
+
         self.LED.set([1,1,0])                   # Orangenes Licht - > Initialisiervorgang läuft
         self.Servo.setAngle(180)                # Schloss anfangs öffnen
         personen = self.PersonenHandler.find("./Daten") # Alle erlaubten Personen aus Ordner Daten laden
@@ -104,12 +105,6 @@ class Handler: # Führt alle Notwendigen Befehle aus, aber Hauptdatei bleibt üb
                 if not self.warten_mit_abbruch(0.3): return False
             return False
     
-
-            
-        '''
-
-        warte bis nur eine unbekannte Person im Bild ist
-        warte eine Sekunde
-        fuege Person hinzu
-
-        '''
+    def end(self):
+        self.LED.set([0,0,0]) # LED wieder ausschalten
+        GPIO.cleanup() # Falls das Programm beendet wurde oder ein Fehler auf kommt werden die Ports freigegeben und können direkt wieder genutzt werden
