@@ -1,4 +1,4 @@
-# **HAUS MIT SICHERHEITSTÜR**
+#### **HAUS MIT SICHERHEITSTÜR**
 
 NwT-Abschlussprojekt J2
 
