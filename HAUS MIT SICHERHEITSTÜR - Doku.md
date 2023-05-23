@@ -65,7 +65,7 @@ Ein Haus mit Sicherheitstür soll erstellt werden. Die Tür kann nur durch ein G
 
 ![](./Bilder/Bild2.png)
 
-**3.2. Projektzeitplan**
+### **3.2. Projektzeitplan**
 
 ||<p>Woche 1</p><p>6/9.2.23</p>|<p>Woche 2</p><p>13/16.2.23</p>|<p>Woche 3</p><p>27\.2/2.3.23</p>|<p>Woche 4</p><p>6/9.3.23</p>|<p>Woche 5</p><p>13/16.3.23</p>|<p>Woche 6</p><p>20/23.3.23</p>|<p>Woche 7</p><p>27/30.3.23</p>|<p>Woche 8</p><p>8/11.5.23</p>|
 | :- | :- | :- | :- | :- | :- | :- | :- | :- |
@@ -129,7 +129,7 @@ Die Schaltung wollten wir nicht mit einer Platine verwirklichen, da wir die Baut
 ![](./Bilder/Bild4.jpeg)
 
 Durch zu kurze Kabel sind die Anschlüsse bei unserem Projekt etwas vertauscht: 
-Knopf: 22; Servo: 27; Tür: 17; Buzzer: 26
+Knopf: 22; Servo: 27; Tür: 17; Buzzer: 26.
 Der Rest bleibt gleich.
 
 
@@ -162,7 +162,9 @@ Auf dem beigefügten Stick befinden sich die zusätzlichen Dateien (erklärter P
 
 
 ### **4.4. Aufgabenbereiche**
-![](./Bilder/Bild6.png) (Wer hat was gemacht)
+(Wer hat was gemacht)
+
+![](./Bilder/Bild6.png) 
 
 
 ##    **5. ABSCHLUSSPHASE**
@@ -204,7 +206,7 @@ Durch den Bau unserer Box konnten wir dies erfolgreich durchführen und weitreic
 
 ### **6.1. Literaturverzeichnis:**
 
-`	`Verständnis von Neuronalen Netzen: [NNFS](https://nnfs.io/) Harrison Kinsley & Daniel Kukieła 
+   Verständnis von Neuronalen Netzen: [NNFS](https://nnfs.io/) Harrison Kinsley & Daniel Kukieła 
 
 ### **6.2. Internetquellenverzeichnis:**
 
