@@ -1,0 +1,7 @@
+geänderte Ports!
+
+Knopf: 22
+Servo: 27
+Tür: 17
+
+Buzzer: 26
