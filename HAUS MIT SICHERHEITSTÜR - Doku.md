@@ -1,4 +1,4 @@
-#### **HAUS MIT SICHERHEITSTÜR**
+# **HAUS MIT SICHERHEITSTÜR**
 
 NwT-Abschlussprojekt J2
 
@@ -33,7 +33,7 @@ Zeitraum: 06.02.2023-22.05.2023
    1. Literaturverzeichnis                                              10
    1. Internetquellenverzeichnis                                        10
 
-**1. EINLEITUNG**
+##    **1. EINLEITUNG**
 
 Wir wollen ein Miniaturhaus mit einer Sicherheitstüre bauen. Diese soll nur aufschließen, wenn eine Person anhand eines Gesichtserkennungsprogramms erkannt wird. 
 
@@ -47,37 +47,23 @@ Deshalb möchten wir uns mit diesem Projekt damit beschäftigen die Gesichtserke
 
 
 
-`	`**2. VORBEREITUNGSPHASE**
+##    **2. VORBEREITUNGSPHASE**
 
-**2.1. Projektauftrag**
+### **2.1. Projektauftrag**
 
 In einer Gruppe (2er-4er Teams) wird bis zum 22.05.2023 ein technisches Gerät entwickelt.
 
 Das Projekt wird am 22.05.2023 präsentiert und die Dokumentation am 15.05.2023 fertiggestellt, ausgedruckt, digital und persönlich abgegeben. Ein erster Dokumentationsentwurf wird am 31.03.2023 abgegeben.
 
-**2.2. Projektziele**
+### **2.2. Projektziele**
 
 Ein Haus mit Sicherheitstür soll erstellt werden. Die Tür kann nur durch ein Gesichtserkennungsprogramm nach außen geöffnet werden. Ein Knopf („Klingel“) startet das Programm und bei Erkennung einer Person öffnet sich das Schloss. Eine LED sowie ein Tonsignal eines Buzzers sollen angeben ob das Gesicht erkannt wurde und die Person berechtigt ist durchzugehen. 
 
-`	`**3. PLANUNGSPHASE**
+##    **3. PLANUNGSPHASE**
+
+### **3.1. Projektstrukturplan**
 
 ![](./Bilder/Bild2.png)
-
-**3.1. Projektstrukturplan**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 **3.2. Projektzeitplan**
 
@@ -97,7 +83,7 @@ Ein Haus mit Sicherheitstür soll erstellt werden. Die Tür kann nur durch ein G
 |**ABGABE**|<p>31\.03.2023</p><p>(Entwurf Dokumentation)</p>|<p>15\.05.2023</p><p>(Dokumentation)</p>|<p>22\.05.2023</p><p>(Präsentation)</p>|
 | :-: | :-: | :-: | :-: |
 
-**3.3. Recherche:**
+### **3.3. Recherche:**
 
 **Raspberry Pi: [\[5\]](https://www.boonedam.de/blog/das-gesicht-der-zukunft-erkennen#_ftn1)**
 
@@ -110,13 +96,7 @@ Meistens wird dieser Mini-Computer als Steuerungs-Computer, Roboter-Komponente o
 „Die Gesichtserkennung ist ein Verfahren zur Identifizierung oder Bestätigung der Identität einer Person anhand ihres Gesichts. Gesichtserkennungssysteme können für die Bestimmung von Personen auf Fotos, in Videos oder in Echtzeit eingesetzt werden. Die Gesichtserkennung ist eine Kategorie der biometrischen Sicherheit.“
 
 
-
-
-
-
-
-
-**3.4. Bauteile**
+### **3.4. Bauteile**
 
 Die verwendeten Bauteile können in 3 Bereiche unterteilt werden:
 
@@ -140,12 +120,15 @@ Die verwendeten Bauteile können in 3 Bereiche unterteilt werden:
 
 Die 3D gedruckten Teile finden sich alle unter dem [Ordner CAD](https://github.com/DavidVoellm/HouseWithFaceRecognition/tree/master/CAD), da drin sind auch die Technischen Zeichnungen.
 
-**3.5. Schaltung**
+### **3.5. Schaltung**
+
 ![](./Bilder/Bild3.png)
 
 Die Schaltung wollten wir nicht mit einer Platine verwirklichen, da wir die Bauteile nicht direkt auf die Platine löten wollten und man auch keine Platine direkt auf den Raspberry Pi stecken kann.
 
-![](./Bilder/Bild4.jpeg)Durch zu kurze Kabel sind die Anschlüsse bei unserem Projekt etwas vertauscht: 
+![](./Bilder/Bild4.jpeg)
+
+Durch zu kurze Kabel sind die Anschlüsse bei unserem Projekt etwas vertauscht: 
 Knopf: 22; Servo: 27; Tür: 17; Buzzer: 26
 Der Rest bleibt gleich.
 
@@ -153,9 +136,9 @@ Der Rest bleibt gleich.
 
 
 
-`	`**4. DURCHFÜHRUNGSPHASE**
+##    **4. DURCHFÜHRUNGSPHASE**
 
-**4.1. Funktionsbeschreibung**
+### **4.1. Funktionsbeschreibung**
 
 Beim Starten des Programms, leuchtet die LED so lange orange, bis alle Initialisierungen fertig sind, dann leuchtet sie grün.
 
@@ -169,22 +152,22 @@ Neue Person hinzufügen (Mona, David): Wenn eine Person mit Zugriff die Türe au
 
 **Eine Erklärung, wie das Programm zu starten ist, findet sich [hier](https://github.com/DavidVoellm/HouseWithFaceRecognition/blob/master/Wie%20starte%20ich%20das%20Programm.pdf).**
 
-**4.2. Ablauf**
+### **4.2. Ablauf**
 
 ![](./Bilder/Bild5.jpeg)Wir haben damit begonnen, Testprogramme für die Gesichtserkennung zu schreiben, um zu wissen, ob unser Plan überhaupt möglich ist. Nachdem das funktioniert hat, haben wir das Betriebssystem Rasbian auf dem Raspberry Pi aufgesetzt. Dann haben wir angefangen 3D Modelle für Halterungen zu designen und einzelne elektrische Bauteile anzusteuern. Währenddessen hatten wir einige Schwierigkeiten bei der Kamera Auswahl, da einige nicht so funktioniert haben, wie es geplant war, deshalb haben wir schlussendlich eine USB-Webcam genommen. Als nächstes haben wir die Wände gesägt und zusammengeklebt und gleichzeitig die Gesamtschaltung gebaut und getestet. Mit dem Bau der Schaltung haben wir gleichzeitig das Programm angepasst und getestet. Dieses Teil hat den größten Teil des Projekts in Anspruch genommen. Als dieser Teil auch fertig war, kam der Zusammenbau, des gesamten Projekts, dazu gehörte das Verlöten der Schaltung, das Einbauen der elektrischen Bauteile in die Wand und das Anschließen der Kabel an den Raspberry Pi.
 
-**4.3. Anhänge**
+### **4.3. Anhänge**
 
 Auf dem beigefügten Stick befinden sich die zusätzlichen Dateien (erklärter Programmcode, Frizzing, CAD-Komponenten, Nachbau der Boxteile in freeCAD…), die in der Dokumentation, um Dopplungen zu vermeiden, nicht eingefügt wurden (Alle diese Anhänge befinden sich aber auch aktualisiert auf [meinem GitHub Repo](https://github.com/DavidVoellm/HouseWithFaceRecognition)).
 
 
-**4.4. Aufgabenbereiche**
+### **4.4. Aufgabenbereiche**
 ![](./Bilder/Bild6.png) (Wer hat was gemacht)
 
 
-`	`**5. ABSCHLUSSPHASE**
+##    **5. ABSCHLUSSPHASE**
 
-**5.1.Ist-Soll-Vergleich**
+### **5.1.Ist-Soll-Vergleich**
 
 |**SOLL**|**IST**|
 | :-: | :-: |
@@ -198,7 +181,7 @@ Auf dem beigefügten Stick befinden sich die zusätzlichen Dateien (erklärter P
 |Eine passende Kamera soll ausgewählt werden.|Es wurde eine USB-Webcam ausgewählt.|
 |Mit einer Kamera werden Bilder aufgenommen, die dann nach bekannten Personen untersucht werden.|Bilder können aufgenommen werden und ein System aus Bilderkennung und Personenhandler wertet diese aus. Neue Personen können hinzugefügt werden.|
 
-**5.2. Fehleranalyse und Verbesserungsvorschläge**
+### **5.2. Fehleranalyse und Verbesserungsvorschläge**
 
 |**FEHLER**|**VERBESSERUNG**|
 | :-: | :-: |
@@ -209,7 +192,7 @@ Auf dem beigefügten Stick befinden sich die zusätzlichen Dateien (erklärter P
 |Die Kamera wurde nicht erkannt|Es wurde eine andere USB-Kamera verwendet.|
 |Türsensor erkennt nicht zuverlässig, ob die Türe geschlossen ist, da etwas Bewegungsspielraum frei ist.|Magneten halten die Tür geschlossen|
 
-**5.3. Zusammenfassung/ Resümee**
+### **5.3. Zusammenfassung/ Resümee**
 
 Das Ziel unseres Projektes war, kostengünstig und mit den von der Schule zur Verfügung gestellten Materialien ein Haus mit Sicherheitstür zu bauen. 
 
@@ -217,13 +200,13 @@ Dafür recherchierten wir zuerst die Relevanz der Gesichtserkennung in der heuti
 
 Durch den Bau unserer Box konnten wir dies erfolgreich durchführen und weitreichend testen. Eine LED zeigt immer den Programmstatus an, ein Türsensor erkennt, ob die Türe geschlossen wurde (und das Schloss nun verschlossen werden darf) und es können auch neue Personen, mit der Berechtigung „Schloss auf“ hinzuzugefügt werden.
 
-**6. QUELLENANGABEN**
+##    **6. QUELLENANGABEN**
 
-**7.1. Literaturverzeichnis:**
+### **6.1. Literaturverzeichnis:**
 
 `	`Verständnis von Neuronalen Netzen: [NNFS](https://nnfs.io/) Harrison Kinsley & Daniel Kukieła 
 
-**7.2. Internetquellenverzeichnis:**
+### **6.2. Internetquellenverzeichnis:**
 
 1. <https://blog.boonedam.com> (06.03.2023) Larissa Wach: Das Gesicht der Zukunft erkennen. Meldung vom O.A.
 
