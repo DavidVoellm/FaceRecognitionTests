@@ -1,4 +1,4 @@
-#h1﻿**HAUS MIT SICHERHEITSTÜR**
+# **HAUS MIT SICHERHEITSTÜR**
 
 NwT-Abschlussprojekt J2
 
@@ -8,7 +8,7 @@ Zeitraum: 06.02.2023-22.05.2023
 
 ![](./Bilder/Bild1.png)
 
-**INHALTSVERZEICHNIS**
+## **INHALTSVERZEICHNIS**
 
 1. **Einleitung**                                                       3
 1. **Vorbereitungsphase**                                               4
